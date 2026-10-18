@@ -1,0 +1,39 @@
+# Xiaomi MiTV-AXFR0 (codename rango), Android TV 11 (SDK 30), firmware RTT0.210630.002.1986, Amlogic/droidlogic.
+# 1 GB RAM. Started from examples/xiaomi-mitv-axso0: 19 of its 29 packages exist here.
+# Live TV app: com.android.tv (set it as live_tv_package and hide it in launcher config.xml).
+# Stock launcher: com.google.android.tvlauncher (the default, disabled by build-and-install.sh).
+#
+# Apply:   TV_HOST=<tv ip> tools/disable.sh examples/xiaomi-mitv-axfr0/debloat.txt
+# Undo:    TV_HOST=<tv ip> tools/restore.sh examples/xiaomi-mitv-axfr0/debloat.txt
+# Everything is DISABLED, not uninstalled. Comment out any line you want to keep.
+
+# Xiaomi + Google telemetry
+com.miui.tv.analytics
+com.xiaomi.statistic
+com.google.android.feedback
+
+# PatchWall, content rows, sponsored rows
+com.mitv.tvhome.atv
+com.xm.webcontent
+com.google.android.tvrecommendations
+android.autoinstalls.config.xioami.dangal   # Play auto-install of partner apps (sic, "xioami")
+
+# Xiaomi background services
+com.xiaomi.mitv.tvmanager                   # "TV Manager" cleaner
+com.xiaomi.mitv.handbook
+# com.xiaomi.mitv.updateservice             # firmware updates: kept enabled on this TV
+
+# Personal choice: voice assistant (the mic button stops working)
+com.google.android.katniss
+
+# Personal choice: casting / mirroring
+com.google.android.apps.mediashell          # Chromecast built-in
+com.mitv.milinkservice                      # Mi Cast
+com.xiaomi.mitv.smartshare
+com.xiaomi.wfdsinkhelperservice             # Miracast sink
+
+# Preloaded apps
+com.xiaomi.mimusic2
+com.google.android.play.games
+com.google.android.videos                   # Play Movies & TV
+com.mitv.gallery                            # Mi Gallery; Media Explorer still opens USB photos
